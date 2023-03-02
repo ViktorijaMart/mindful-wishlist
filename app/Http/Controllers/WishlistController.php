@@ -20,7 +20,7 @@ class WishlistController extends Controller
      */
     public function create()
     {
-        //
+        return view('wishlist.create');
     }
 
     /**
@@ -28,7 +28,7 @@ class WishlistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dump($request->toArray());
     }
 
     /**
