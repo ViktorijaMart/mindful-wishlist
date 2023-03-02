@@ -54,9 +54,15 @@ class WishlistController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(wishlist $wishlist)
+    public function show(string $id)
     {
-        //
+        $wishItem = Wishlist::findOrFail($id);
+
+        if ($wishItem->user_id !== Auth::user()->id) {
+            return abort(404);
+        }
+
+        return view('wishlist.show', ['wishItem' => $wishItem]);
     }
 
     /**
