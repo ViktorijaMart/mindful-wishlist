@@ -84,7 +84,11 @@ class WishlistController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        dump($request);
+        $requestArray = $request->toArray();
+
+        $this->wishlistService->update($requestArray, $id);
+
+        return redirect()->intended(route('wishlist'));
     }
 
     /**
