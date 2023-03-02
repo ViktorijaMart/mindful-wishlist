@@ -3,10 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Wishlist;
+use App\Services\WishlistService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class WishlistController extends Controller
 {
+    public function __construct(private WishlistService $wishlistService)
+    {
+
+    }
     /**
      * Display a listing of the resource.
      */
@@ -28,7 +34,19 @@ class WishlistController extends Controller
      */
     public function store(Request $request)
     {
-        dump($request->toArray());
+        $wishItem = new Wishlist();
+        $wishItem->user_id = Auth::user()->id;
+        $wishItem->name = $request->name;
+        $wishItem->price = $request->price;
+        $wishItem->store_name = $request->store_name;
+        $wishItem->store_url = $request->store_url;
+        $wishItem->category = $request->category;
+        $wishItem->tags = $this->wishlistService->getTags($request->toArray());
+        $wishItem->reminder = null;
+        $wishItem->reflection = $request->reflection;
+        $wishItem->save();
+
+        return redirect()->intended(route('dashboard'));
     }
 
     /**
