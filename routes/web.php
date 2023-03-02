@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth'])->group(function() {
     // Wishlist
+    Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist');
     Route::get('/wishlist/create', [WishlistController::class, 'create'])->name('wishlist.create');
     Route::post('/wishlist/store', [WishlistController::class, 'store'])->name('wishlist.store');
 });

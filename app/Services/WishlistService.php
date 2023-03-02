@@ -4,6 +4,19 @@ namespace App\Services;
 
 class WishlistService
 {
+    public function showWishlist(array $wishlist): array
+    {
+        $wishlistToShow = [];
+
+        foreach ($wishlist as $item) {
+            if(is_null($item['reminder']) && $item['bought'] === 0 && $item['graveyard'] === 0) {
+                $wishlistToShow[] = $item;
+            }
+        }
+
+        return $wishlistToShow;
+    }
+
     public function getTags(array $request): string
     {
         $tags = [];

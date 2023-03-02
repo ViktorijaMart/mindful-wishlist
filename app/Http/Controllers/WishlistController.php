@@ -18,7 +18,9 @@ class WishlistController extends Controller
      */
     public function index()
     {
-        //
+        $wishlistToShow = $this->wishlistService->showWishlist(Wishlist::all()->toArray());
+
+        return view('wishlist.wishlist', ['wishlist' => $wishlistToShow]);
     }
 
     /**
