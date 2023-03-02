@@ -68,17 +68,23 @@ class WishlistController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(wishlist $wishlist)
+    public function edit(string $id)
     {
-        //
+        $wishItem = Wishlist::findOrFail($id);
+
+        if ($wishItem->user_id !== Auth::user()->id) {
+            return abort(404);
+        }
+
+        return view('wishlist.edit', ['wishItem' => $wishItem]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, wishlist $wishlist)
+    public function update(Request $request, string $id)
     {
-        //
+        dump($request);
     }
 
     /**

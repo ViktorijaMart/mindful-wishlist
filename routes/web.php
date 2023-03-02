@@ -35,6 +35,8 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/wishlist/create', [WishlistController::class, 'create'])->name('wishlist.create');
     Route::post('/wishlist/store', [WishlistController::class, 'store'])->name('wishlist.store');
     Route::get('/wishlist/{id}', [WishlistController::class, 'show'])->name('wishlist.show');
+    Route::get('/wishlist/{id}/edit', [WishlistController::class, 'edit'])->name('wishlist.edit');
+    Route::put('wishlist/{id}/update', [WishlistController::class, 'update'])->name('wishlist.update');
 });
 
 require __DIR__.'/auth.php';
