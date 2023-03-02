@@ -47,12 +47,12 @@
     <textarea id="reflection" name="reflection"></textarea>
     <p>Add tags</p>
     <div>
-        <input type="checkbox" id="high_quality" name="high_quality">
-        <label for="high_quality">High-quality</label>
+        <input type="checkbox" id="high-quality" name="high-quality">
+        <label for="high-quality">High-quality</label>
     </div>
     <div>
-        <input type="checkbox" id="low_quality" name="low_quality">
-        <label for="low_quality">Low-quality</label>
+        <input type="checkbox" id="low-quality" name="low-quality">
+        <label for="low-quality">Low-quality</label>
     </div>
     <div>
         <input type="checkbox" id="healthy" name="healthy">
