@@ -38,9 +38,9 @@
         <p>Set reminder</p>
         <input type="number" name="reminder_number">
         <select name="reminder_unit">
-            <option value="hour">hour/hours</option>
-            <option value="day">day/days</option>
-            <option value="week">week/weeks</option>
+            <option value="H">hour/hours</option>
+            <option value="D">day/days</option>
+            <option value="W">week/weeks</option>
         </select>
     </div>
     <label for="reflection">Reflection:</label>
