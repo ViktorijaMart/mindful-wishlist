@@ -18,7 +18,9 @@ class WishlistController extends Controller
      */
     public function index()
     {
-        $wishlistToShow = $this->wishlistService->showWishlist(Wishlist::all()->toArray());
+        $userId = Auth::user()->id;
+
+        $wishlistToShow = $this->wishlistService->showWishlist(Wishlist::all()->where('user_id', $userId)->toArray());
 
         return view('wishlist.wishlist', ['wishlist' => $wishlistToShow]);
     }
