@@ -44,7 +44,7 @@ class WishlistController extends Controller
         $wishItem->store_url = $request->store_url;
         $wishItem->category = $request->category;
         $wishItem->tags = $this->wishlistService->getTags($request->toArray());
-        $wishItem->reminder = null;
+        $wishItem->reminder = $this->wishlistService->getReminder($request->toArray());
         $wishItem->reflection = $request->reflection;
         $wishItem->save();
 

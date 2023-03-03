@@ -90,4 +90,28 @@ class WishlistService
 
         return implode(' ', $tags);
     }
+
+    public function getReminder(array $request): ?string
+    {
+        if(is_null($request['reminder_number'])) {
+            return null;
+        }
+
+        $now = new \DateTime();
+        $reminderNumber = $request['reminder_number'];
+        $reminderUnit = $request['reminder_unit'];
+        $intervalString = '';
+
+        if($reminderUnit === 'H') {
+            $intervalString .= 'PT' . $reminderNumber . $reminderUnit;
+        } else {
+            $intervalString .= 'P' . $reminderNumber . $reminderUnit;
+        }
+
+        $interval = new \DateInterval($intervalString);
+
+        $reminderDate = $now->add($interval);
+
+        return $reminderDate->format('Y-m-d H:i:s');
+    }
 }
