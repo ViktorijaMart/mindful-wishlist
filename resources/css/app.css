@@ -9,7 +9,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-p, a {
+p, a, label, input, button {
     font-size: 20px;
 }
 
@@ -20,6 +20,23 @@ p {
 a {
     text-decoration: none;
     color: black;
+}
+
+button {
+    background-color: rgb(170, 152, 169, 0.4);
+    font-size: 26px;
+    border: 3px solid rgb(58,48,58);
+    padding: 5px 20px;
+}
+
+label {
+    margin: 10px 0 5px 0;
+    opacity: 0.8;
+    display: block;
+}
+
+legend {
+    font-size: 28px;
 }
 
 /* Header */
@@ -64,4 +81,44 @@ a {
     font-size: 26px;
     border: 3px solid rgb(58,48,58);
     padding: 5px 20px;
+}
+
+/*Guest, Register, Login, Password*/
+.auth_container {
+    max-width: 40%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth_logo {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: rgb(58,48,58)
+}
+
+.auth_form fieldset {
+    padding: 20px;
+}
+
+.auth_form input {
+    width: 100%;
+}
+
+.auth_form button {
+    margin-right: 10px;
+}
+
+.auth_form_register,
+.auth_form_login {
+    margin-top: 20px;
+}
+
+.auth_form_remember label {
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
