@@ -59,6 +59,7 @@ legend {
     align-items: center;
     justify-content: end;
     cursor: pointer;
+    position: relative;
 }
 
 .dropdown_icon {
@@ -71,6 +72,7 @@ legend {
     box-shadow: rgba(58, 48, 58, 0.35) 0px 5px 15px;
     transform: translateY(0.5rem);
     visibility: hidden;
+    position: absolute;
     opacity: 0;
 }
 
@@ -94,6 +96,13 @@ legend {
 .dropdown_link:hover {
     background-color: rgb(170, 152, 169, 0.4);
 }
+
+/*Navigation*/
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
 
 /*Welcome page*/
 .welcome-container {
@@ -166,4 +175,9 @@ legend {
     width: 100%;
     display: flex;
     align-items: center;
+}
+
+/*App layout*/
+.container {
+    display: flex;
 }
