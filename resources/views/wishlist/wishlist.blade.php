@@ -25,8 +25,18 @@
                 </div>
                 <div class="pause-item_buttons">
                     <a href="{{route('wishlist.show', $item['id'])}}" class="button">More Info</a>
-                    <button>Bought it</button>
-                    <button>No longer want it</button>
+                    <form method="post" action="{{route('wishlist.update', $item['id'])}}" class="wish_button">
+                        @method('PUT')
+                        @csrf
+                        <input type="hidden" name="bought" value="1">
+                        <button type="submit" class="button--bigger wish-button_button">Bought it</button>
+                    </form>
+                    <form method="post" action="{{route('wishlist.update', $item['id'])}}" class="wish_button">
+                        @method('PUT')
+                        @csrf
+                        <input type="hidden" name="graveyard" value="1">
+                        <button type="submit" class="button--bigger wish-button_button">Don't want it anymore</button>
+                    </form>
                 </div>
             </div>
         @endforeach
