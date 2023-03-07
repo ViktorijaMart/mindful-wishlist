@@ -10,7 +10,7 @@
     letter-spacing: 0.1rem;
 }
 
-p, a, label, input, button {
+p, a, label, input, button, select, textarea {
     font-size: 20px;
 }
 
@@ -30,18 +30,26 @@ button,
     padding: 5px 20px;
 }
 
+.button--bigger {
+    font-size: 26px;
+}
+
 label {
     margin: 10px 0 5px 0;
     opacity: 0.8;
     display: block;
 }
 
-input {
+input, select, textarea {
     padding: 2px 4px;
 }
 
 legend {
     font-size: 28px;
+}
+
+.checkbox {
+    transform: scale(1.5);
 }
 
 /* Header */
@@ -195,12 +203,10 @@ legend {
 
 .main_container {
     width: 80%;
+    padding: 50px;
 }
 
 /*Dashboard*/
-.dashboard_container {
-    padding: 50px;
-}
 
 .dashboard_add {
     display: inline-block;
@@ -283,4 +289,76 @@ legend {
 
 .pause-item_buttons button:last-child {
     grid-column: 1 / span 2;
+}
+
+/*Wishlist Form*/
+.wishlist-form {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    width: max-content;
+    padding: 40px;
+}
+
+.wishlist-form input,
+.wishlist-form select,
+.wishlist-form textarea {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.wishlist-form input {
+    border: 1px solid rgb(58,48,58, 0.6);
+    width: 100%;
+}
+
+/*.wishlist-form select,*/
+/*.wishlist-form input {*/
+/*    align-self: end;*/
+/*}*/
+
+.create-form label {
+    margin: 5px 0;
+}
+
+.wishlist-form_title {
+    margin-bottom: 20px;
+    color: rgb(58,48,58)
+}
+
+.wishlist-form .checkbox {
+    margin: 0;
+}
+
+.radios_yes-no {
+    display: flex;
+    gap: 20px;
+}
+
+.radio_yes-no {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.create-form_reminder {
+    display: flex;
+    gap: 20px;
+}
+
+.create-form_tags {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.create-form_tag {
+    display: flex;
+    gap: 10px;
+}
+
+.create-form_tag label {
+    white-space: nowrap;
+}
+
+.create-form_button {
+    margin-top: 20px;
 }
