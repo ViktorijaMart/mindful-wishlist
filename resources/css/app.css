@@ -15,7 +15,7 @@ p, a, label, input, button {
 }
 
 p {
-    margin: 10px 0;
+    margin-bottom: 8px;
 }
 
 a {
@@ -23,9 +23,9 @@ a {
     color: black;
 }
 
-button {
+button,
+.button {
     background-color: rgb(170, 152, 169, 0.4);
-    font-size: 26px;
     border: 3px solid rgb(58,48,58);
     padding: 5px 20px;
 }
@@ -189,5 +189,98 @@ legend {
 /*App layout*/
 .container {
     display: flex;
-    height: calc(100vh - 87px);
+    height: calc(100% - 87px);
+    min-height: calc(100vh - 87px);
+}
+
+.main_container {
+    width: 80%;
+}
+
+/*Dashboard*/
+.dashboard_container {
+    padding: 50px;
+}
+
+.dashboard_add {
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.dashboard_yearly-summary {
+    border-top: 1px solid rgb(170, 152, 169, 0.5);
+    border-bottom: 1px solid rgb(170, 152, 169, 0.5);
+    padding: 20px 0;
+}
+
+.pause-list_container {
+    padding-top: 20px;
+}
+
+.pause-list_title {
+    color: rgb(58,48,58);
+    margin-bottom: 20px;
+}
+
+.pause-list {
+    column-count: 3;
+    column-gap: 40px;
+}
+
+.pause-item {
+    /*border: 1px solid rgb(58, 48, 58);*/
+    height: max-content;
+    break-inside: avoid;
+    margin-bottom: 40px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    padding: 20px;
+}
+
+.pause-item_category {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.pause-item_name {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.pause-item_store {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pause-item_store-name {
+    display: inline-block;
+}
+
+.pause-item_store-url {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.pause-item_tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0 20px 0;
+}
+
+.pause-item_tag {
+    margin: 0;
+    border: 1px solid rgb(58,48,58, 0.3);
+    padding: 4px 6px;
+}
+
+.pause-item_buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, calc((100% - 10px) / 2));
+    grid-gap: 10px;
+}
+
+.pause-item_buttons button:last-child {
+    grid-column: 1 / span 2;
 }
