@@ -114,4 +114,48 @@ class WishlistService
 
         return $reminderDate->format('Y-m-d H:i:s');
     }
+
+    public function getPauseList(array $wishlist): array
+    {
+        $dateNow = new \DateTime();
+        $pauseList = [];
+
+        foreach ($wishlist as $wishItem) {
+            if (!is_null($wishItem['reminder'])) {
+                $reminder = new \DateTime($wishItem['reminder']);
+
+                if($reminder < $dateNow) {
+                    $pauseList[] = $wishItem;
+                }
+            }
+        }
+
+        return $pauseList;
+    }
+
+    public function getSavedAmount(array $wishlist): float
+    {
+        $savedAmount = 0;
+
+        foreach ($wishlist as $wishItem) {
+            if($wishItem['graveyard']) {
+                $savedAmount += $wishItem['price'];
+            }
+        }
+
+        return $savedAmount;
+    }
+
+    public function getSpentAmount(array $wishlist): float
+    {
+        $spentAmount = 0;
+
+        foreach ($wishlist as $wishItem) {
+            if($wishItem['bought']) {
+                $spentAmount += $wishItem['price'];
+            }
+        }
+
+        return $spentAmount;
+    }
 }

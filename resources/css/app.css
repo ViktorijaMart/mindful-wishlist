@@ -1,3 +1,438 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*@tailwind base;*/
+/*@tailwind components;*/
+/*@tailwind utilities;*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+p, a, label, input, button, select, textarea {
+    font-size: 20px;
+}
+
+p {
+    margin-bottom: 8px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button,
+.button {
+    background-color: rgb(170, 152, 169, 0.4);
+    border: 3px solid rgb(58,48,58);
+    padding: 5px 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button--bigger {
+    font-size: 26px;
+}
+
+label {
+    margin: 10px 0 5px 0;
+    opacity: 0.8;
+    display: block;
+}
+
+input, select, textarea {
+    padding: 2px 4px;
+}
+
+legend {
+    font-size: 28px;
+}
+
+.checkbox {
+    transform: scale(1.5);
+}
+
+/* Header */
+.header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(58, 48, 58, 0.35) 0px 5px 15px;
+}
+
+.header_logo {
+    color: rgb(58,48,58);
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown_icon {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.dropdown_links {
+    text-align: end;
+    box-shadow: rgba(58, 48, 58, 0.35) 0px 5px 15px;
+    transform: translateY(0.5rem);
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+}
+
+.show_dropdown {
+    transform: translateY(0rem);
+    visibility: visible;
+    opacity: 1;
+}
+
+.arrow_icon {
+    transform: rotate(180deg);
+    transition: 0.2s ease;
+}
+
+.dropdown_link {
+    width: 100%;
+    display: inline-block;
+    padding: 10px 10px 10px 20px;
+}
+
+.dropdown_link:hover {
+    background-color: rgb(170, 152, 169, 0.4);
+}
+
+/*Navigation*/
+.nav {
+    width: 20%;
+    display: flex;
+    background-color: rgb(170, 152, 169, 0.15);
+    flex-direction: column;
+}
+
+.nav_link {
+    padding: 20px 0 20px 20px;
+    border-bottom: 1px solid rgb(170, 152, 169, 0.5);
+}
+
+
+/*Welcome page*/
+.welcome-container {
+    width: 60%;
+    margin: 0 auto;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-container p,
+.welcome-container h1{
+    text-align: center;
+}
+
+.welcome-container h1 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.welcome-container p {
+    font-size: 26px;
+}
+
+.welcome_register {
+    margin-top: 10px;
+    background-color: rgb(170, 152, 169, 0.4);
+    font-size: 26px;
+    border: 3px solid rgb(58,48,58);
+    padding: 5px 20px;
+}
+
+/*Guest, Register, Login, Password*/
+.auth_container {
+    max-width: 40%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth_logo {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: rgb(58,48,58)
+}
+
+.auth_form fieldset {
+    padding: 20px;
+}
+
+.auth_form input {
+    width: 100%;
+}
+
+.auth_form button {
+    margin-right: 10px;
+}
+
+.auth_form_register,
+.auth_form_login {
+    margin-top: 20px;
+}
+
+.auth_form_remember label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/*App layout*/
+.container {
+    display: flex;
+    height: calc(100% - 87px);
+    min-height: calc(100vh - 87px);
+}
+
+.main_container {
+    width: 80%;
+    padding: 50px;
+}
+
+/*Dashboard*/
+
+.dashboard_add {
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.dashboard_yearly-summary {
+    border-top: 1px solid rgb(170, 152, 169, 0.5);
+    border-bottom: 1px solid rgb(170, 152, 169, 0.5);
+    padding: 20px 0;
+}
+
+.pause-list_container {
+    padding-top: 20px;
+}
+
+.pause-list_title {
+    color: rgb(58,48,58);
+    margin-bottom: 20px;
+}
+
+.pause-list {
+    column-count: 3;
+    column-gap: 40px;
+}
+
+.pause-item {
+    /*border: 1px solid rgb(58, 48, 58);*/
+    height: max-content;
+    break-inside: avoid;
+    margin-bottom: 40px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    padding: 20px;
+}
+
+.pause-item_category {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.pause-item_name {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.pause-item_store {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pause-item_store-name {
+    display: inline-block;
+}
+
+.pause-item_store-url {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.item_tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0 20px 0;
+}
+
+.item_tag {
+    margin: 0;
+    border: 1px solid rgb(58,48,58, 0.3);
+    padding: 4px 6px;
+}
+
+.pause-item_buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, calc((100% - 10px) / 2));
+    grid-gap: 10px;
+}
+
+.pause-item_buttons button:last-child {
+    grid-column: 1 / span 2;
+}
+
+/*Wishlist Form*/
+.wishlist-form {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    width: max-content;
+    padding: 40px;
+}
+
+.wishlist-form input,
+.wishlist-form select,
+.wishlist-form textarea {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.wishlist-form input {
+    border: 1px solid rgb(58,48,58, 0.6);
+    width: 100%;
+}
+
+/*.wishlist-form select,*/
+/*.wishlist-form input {*/
+/*    align-self: end;*/
+/*}*/
+
+.create-form label {
+    margin: 5px 0;
+}
+
+.wishlist-form_title {
+    margin-bottom: 20px;
+    color: rgb(58,48,58)
+}
+
+.wishlist-form .checkbox {
+    margin: 0;
+}
+
+.radios_yes-no {
+    display: flex;
+    gap: 20px;
+}
+
+.radio_yes-no {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.create-form_reminder {
+    display: flex;
+    gap: 20px;
+}
+
+.create-form_tags {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.create-form_tag {
+    display: flex;
+    gap: 10px;
+}
+
+.create-form_tag label {
+    white-space: nowrap;
+}
+
+.create-form_button {
+    margin-top: 20px;
+}
+
+/*Item page*/
+.wish-container p {
+    font-size: 22px;
+}
+
+.wish_main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.wish_name {
+    font-size: 40px;
+}
+
+.wish_category,
+.wish_dates,
+.wish_store a {
+    color: rgb(58,48,58, 0.6);
+}
+
+.wish_dates {
+    display: flex;
+    gap: 20px;
+}
+
+.wish_store {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.wish_reflection {
+    width: 50%;
+    padding: 10px;
+    border-left: 1px solid rgb(58,48,58, 0.3);
+    border-bottom: 1px solid rgb(58,48,58, 0.3);
+}
+
+.wish_buttons {
+    margin-top: 30px;
+    display: grid;
+    width: max-content;
+    grid-template-columns: 200px 200px;
+    grid-gap: 20px;
+}
+
+.wish-button_button {
+    width: 100%;
+}
+
+.wish_button:last-child {
+    grid-column: 1 / span 2;
+}
+
+/*Profile*/
+.profile-container button {
+    margin: 10px 0 20px;
+}
+
+.profile_info,
+.profile_password {
+    border-bottom: 1px solid rgb(58,48,58, 0.3);
+}
+
+.profile_password,
+.profile_delete {
+    margin-top: 30px;
+}
+
+
