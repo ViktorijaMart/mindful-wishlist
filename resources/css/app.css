@@ -420,5 +420,19 @@ legend {
     grid-column: 1 / span 2;
 }
 
+/*Profile*/
+.profile-container button {
+    margin: 10px 0 20px;
+}
+
+.profile_info,
+.profile_password {
+    border-bottom: 1px solid rgb(58,48,58, 0.3);
+}
+
+.profile_password,
+.profile_delete {
+    margin-top: 30px;
+}
 
 
