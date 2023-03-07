@@ -47,6 +47,10 @@ class WishlistService
             $wishItem->reflection = $request['reflection'];
         }
 
+        if(array_key_exists('pause-add', $request)) {
+            $wishItem->reminder = null;
+        }
+
         if(array_key_exists('bought', $request)) {
             $wishItem->bought = 1;
         }
