@@ -28,6 +28,8 @@ button,
     background-color: rgb(170, 152, 169, 0.4);
     border: 3px solid rgb(58,48,58);
     padding: 5px 20px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .button--bigger {
@@ -267,14 +269,14 @@ legend {
     margin-bottom: 8px;
 }
 
-.pause-item_tags {
+.item_tags {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin: 10px 0 20px 0;
 }
 
-.pause-item_tag {
+.item_tag {
     margin: 0;
     border: 1px solid rgb(58,48,58, 0.3);
     padding: 4px 6px;
@@ -362,3 +364,61 @@ legend {
 .create-form_button {
     margin-top: 20px;
 }
+
+/*Item page*/
+.wish-container p {
+    font-size: 22px;
+}
+
+.wish_main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.wish_name {
+    font-size: 40px;
+}
+
+.wish_category,
+.wish_dates,
+.wish_store a {
+    color: rgb(58,48,58, 0.6);
+}
+
+.wish_dates {
+    display: flex;
+    gap: 20px;
+}
+
+.wish_store {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.wish_reflection {
+    width: 50%;
+    padding: 10px;
+    border-left: 1px solid rgb(58,48,58, 0.3);
+    border-bottom: 1px solid rgb(58,48,58, 0.3);
+}
+
+.wish_buttons {
+    margin-top: 30px;
+    display: grid;
+    width: max-content;
+    grid-template-columns: 200px 200px;
+    grid-gap: 20px;
+}
+
+.wish-button_button {
+    width: 100%;
+}
+
+.wish_button:last-child {
+    grid-column: 1 / span 2;
+}
+
+
+
