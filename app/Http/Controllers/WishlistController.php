@@ -90,7 +90,7 @@ class WishlistController extends Controller
 
         $this->wishlistService->update($requestArray, $id);
 
-        return redirect()->intended(route('wishlist'));
+        return redirect()->intended(route('dashboard'));
     }
 
     /**
