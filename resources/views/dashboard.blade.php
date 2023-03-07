@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="dashboard_container">
-        <a href="{{route('wishlist.create')}}" class="button dashboard_add">Add new wish</a>
+        <a href="{{route('wishlist.create')}}" class="button button--bigger dashboard_add">Add new wish</a>
         <div class="dashboard_yearly-summary">
             <p>This year you've saved: <span>{{$savedAmount}}</span> &euro;</p>
             <p>This year you've spent: <span>{{$spentAmount}}</span> &euro;</p>
@@ -20,15 +20,15 @@
                                 <p class="pause-item_store-name">{{$item['store_name']}}</p>
                             @endif
                             @if(!is_null($item['store_url']))
-                                <a href="{{$item['store_url']}}" class="pause-item_store-url"><i class="fa-solid fa-arrow-right"></i> Go to website</a>
+                                <a href="{{$item['store_url']}}" class="pause-item_store-url" target="_blank"><i class="fa-solid fa-arrow-right"></i> Go to website</a>
                             @endif
                         </div>
-                        <div class="pause-item_tags">
+                        <div class="item_tags">
                             @php
                                 $tagsArray = explode(' ', $item['tags'])
                             @endphp
                             @foreach($tagsArray as $tag)
-                                <p class="pause-item_tag">{{$tag}}</p>
+                                <p class="item_tag">{{$tag}}</p>
                             @endforeach
                         </div>
                         <div class="pause-item_buttons">
