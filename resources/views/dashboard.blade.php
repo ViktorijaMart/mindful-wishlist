@@ -32,9 +32,24 @@
                             @endforeach
                         </div>
                         <div class="pause-item_buttons">
-                            <button>Yes</button>
-                            <button>No</button>
-                            <button>Already bought it</button>
+                            <form method="post" action="{{route('wishlist.update', $item['id'])}}" class="wish_button">
+                                @method('PUT')
+                                @csrf
+                                <input type="hidden" name="pause-add" value="1">
+                                <button type="submit" class="button--bigger wish-button_button">Yes</button>
+                            </form>
+                            <form method="post" action="{{route('wishlist.update', $item['id'])}}" class="wish_button">
+                                @method('PUT')
+                                @csrf
+                                <input type="hidden" name="graveyard" value="1">
+                                <button type="submit" class="button--bigger wish-button_button">No</button>
+                            </form>
+                            <form method="post" action="{{route('wishlist.update', $item['id'])}}" class="wish_button">
+                                @method('PUT')
+                                @csrf
+                                <input type="hidden" name="bought" value="1">
+                                <button type="submit" class="button--bigger wish-button_button">Already bought it</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
