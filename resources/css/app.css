@@ -54,6 +54,10 @@ legend {
     transform: scale(1.5);
 }
 
+.no-show {
+    color: rgb(58,48,58);
+}
+
 /* Header */
 .header {
     padding: 20px;
