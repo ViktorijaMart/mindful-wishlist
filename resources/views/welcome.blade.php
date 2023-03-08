@@ -20,7 +20,7 @@
                 <h1>Welcome to Mindful Wishlist</h1>
                 <p>Our website is designed to help you create a wishlist that reflects your values and brings you true happiness and fulfillment. Instead of just adding items to your list without much thought, we encourage you to take a mindful approach and really reflect on what you need and want in your life.</p>
                 <p>By taking this approach, you can create a wishlist that truly enhances your life and helps you focus on what matters most.</p>
-                <p>If you would like joining on this mindful journey, you can register by clicking the link below.</p>
+                <p>If you would like to join this mindful journey, you can register by clicking the link below.</p>
 
             </div>
             <a href="{{ route('register') }}" class="welcome_register">Register</a>
